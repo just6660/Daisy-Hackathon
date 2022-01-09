@@ -32,7 +32,6 @@ appartment_data = pd.read_csv(appartment_data_path)
 #define X and y variables
 y = appartment_data.Price
 
-'''Removed Address Temporarily'''
 appartment_features = ["Bedroom","Bathroom","Den","Lat","Long"]
 X = appartment_data[appartment_features]
 
@@ -69,5 +68,8 @@ if submit:
 
     predicted_price = (model.predict(pd.DataFrame([user_data_list])))
     st.write(f'The predicted price of the appartment is: ${int(predicted_price[0])}')
+
+st.write(f"""# Toronto Appartment Rent Price Data""")
+st.write(appartment_data)
 
 

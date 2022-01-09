@@ -38,7 +38,7 @@ X = appartment_data[appartment_features]
 #splitting data into training and validation
 train_X, val_X, train_y, val_y = train_test_split(X,y,train_size = 0.8, test_size = 0.2, random_state = 0)
 
-model = XGBRegressor(n_estimators = 1000,max_depth= 6, colsample_bylevel = 1,colsample_bytree = 0.8,learning_rate = 0.1,subsample = 1, reg_alpha = 0.7, reg_lambda=0.12,gamma =0.5)
+model = XGBRegressor(n_estimators = 1000,max_depth= 6, colsample_bylevel = 1,colsample_bytree = 0.6,learning_rate = 0.1,subsample = 1, reg_alpha = 0.7, reg_lambda=0.12,gamma =0.5)
 model.fit(train_X, train_y)
 
 predictions = model.predict(val_X)

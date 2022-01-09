@@ -7,9 +7,7 @@ from xgboost import XGBRegressor
 from PIL import Image
 import pgeocode
 
-nomi = pgeocode.Nominatim("CA")
-postal_code_data = nomi.query_postal_code("M5G")
-print(postal_code_data[["latitude","longitude"]])
+
 
 
 
@@ -56,8 +54,6 @@ form = st.form(key='my-form')
 user_data["Bedrooms"] = form.number_input('Number of Bedrooms')
 user_data['Bathrooms'] = form.number_input('Number of Bathrooms')
 user_data["Den"] = form.number_input("Number of Dens")
-user_data["Long"] = form.number_input("Longitude")
-user_data["Lat"] = form.number_input("Latitude")
 user_data["postal"] = form.text_input("Postal Code")
 submit = form.form_submit_button('Submit')
 
@@ -65,7 +61,15 @@ if submit:
     user_data_list = []
     for key in user_data:
         user_data_list.append(user_data[key])
-    predicted_price = (model.predict(pd.DataFrame([[user_data_list]])))
+
+    nomi = pgeocode.Nominatim("CA")
+    postal_code_data = nomi.query_postal_code(user_data_list[-1][:4])
+    del(user_data_list[-1])
+
+    user_data_list.extend(postal_code_data[["latitude","longitude"]].tolist())
+
+
+    predicted_price = (model.predict(pd.DataFrame([user_data_list])))
     st.write(f'The predicted price of the appartment is: ${int(predicted_price[0])}')
 
 

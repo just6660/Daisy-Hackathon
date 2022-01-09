@@ -15,11 +15,11 @@ st.set_page_config(layout="wide")
 
 # Create a title and a sub title
 st.write("""
-# Apartment Price Machine Learning Predictive Model
+# Appartment Price Machine Learning Predictive Model
 """)
 
 st.write("""# About
-This webapp was created for the 2022 Daisy Intelligence Hackathon. Given several parameters, it predicts appartment rent prices using XGBoost modelling through gradient boosting. The model is trained by first splitting data into training and validation and then the XGBoost parameters are adjusted to minimize the mean absolute error to obtain a model with a higher accuracy. The webapp is created and hosted through streamlit.
+This webapp was created for the 2022 Daisy Intelligence Hackathon. Given several parameters, it predicts Toronto appartment rental prices using XGBoost modelling through gradient boosting. The model is trained by first splitting data into training and validation and then the XGBoost parameters are adjusted to minimize the mean absolute error to obtain a model with a higher accuracy. The webapp is created and hosted through streamlit.
 """)
 
 Image = Image.open('logo.png')
@@ -71,5 +71,6 @@ if submit:
 
 st.write(f"""# Toronto Appartment Rent Price Data""")
 st.write(appartment_data)
+
 
 

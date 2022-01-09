@@ -72,6 +72,6 @@ if submit:
 st.write(f"""# Toronto Appartment Rent Price Data""")
 st.write(appartment_data)
 st.write(f"""# Map of Appartments Used As Data""")
-st.image("heat-map.png")
+st.image("heat-map.PNG")
 
 

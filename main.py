@@ -47,12 +47,12 @@ mae = mean_absolute_error(predictions,val_y)
 #Getting User Input
 user_data = {}
 
-form = st.form(key='my-form')
-user_data["Bedrooms"] = form.number_input('Number of Bedrooms')
-user_data['Bathrooms'] = form.number_input('Number of Bathrooms')
-user_data["Den"] = form.number_input("Number of Dens")
-user_data["postal"] = form.text_input("Postal Code")
-submit = form.form_submit_button('Submit')
+with st.form('Form 1'):
+    user_data["Bedrooms"] = st.selectbox('Number of Bedrooms',[1,2,3])
+    user_data["Bathrooms"] = st.selectbox('Number of Bathrooms',[1,2,3])
+    user_data["Den"] = st.selectbox('Number of Dens',[0,1])
+    user_data["postal"] = st.text_input(label="Postal Code")
+    submit = st.form_submit_button(label="Calculate")
 
 if submit:
     user_data_list = []
@@ -71,6 +71,7 @@ if submit:
 
 st.write(f"""# Toronto Appartment Rent Price Data""")
 st.write(appartment_data)
-
+st.write(f"""# Map of Appartments Used As Data""")
+st.image("heat-map.png")
 
 

@@ -173,7 +173,6 @@ Bedroom,Bathroom,Den,Address,Lat,Long,Price
 1,2,1,"2121 Lake Shore Blvd W, Etobicoke, ON M8V 4E9, Canada",43.6274471,-79.4783741,2350
 1,2,1,"2121 Lake Shore Blvd W, Etobicoke, ON M8V 4E9, Canada",43.6274471,-79.4783741,2450
 1,2,1,"2121 Lake Shore Blvd W, Etobicoke, ON M8V 4E9, Canada",43.6274471,-79.4783741,2450
-1,2,1,"2121 Lake Shore Blvd W, Etobicoke, ON M8V 4E9, Canada",43.6274471,-79.4783741,99
 1,2,1,"2121 Lake Shore Blvd W, Etobicoke, ON M8V 4E9, Canada",43.6274471,-79.4783741,2400
 2,1,0,"2548 Eglinton Ave W, M6M 1T1, Toronto, ON",43.6911466,-79.4714355,1850
 2,1,0,"2548 Eglinton Ave W, M6M 1T1, Toronto, ON",43.6911466,-79.4714355,1850
@@ -279,7 +278,6 @@ Bedroom,Bathroom,Den,Address,Lat,Long,Price
 1,1,0,"1 SHAW ST, TORONTO, ON, M6K 0A1",43.6408455,-79.4143193,2180
 1,1,0,"1 SHAW ST, TORONTO, ON, M6K 0A1",43.6408455,-79.4143193,2180
 1,1,0,"38 Western Battery Rd, Toronto, ON M6K 3P1, Canada",43.6396381,-79.4131037,1700
-1,2,0,"Euclid Ave, Toronto, ON, Canada",43.6586892,-79.4125775,65
 1,1,0,"26 Western Battery Rd, Toronto, ON M6K 3P1, Canada",43.6398254,-79.4122306,2250
 1,1,0,"51 E Liberty St, Toronto M6K 3P8 ON",43.6387003,-79.4121833,2200
 1,1,0,"51 E Liberty St, Toronto M6K 3P8 ON",43.6387003,-79.4121833,2200
@@ -341,7 +339,6 @@ Bedroom,Bathroom,Den,Address,Lat,Long,Price
 2,1,0,"70 Queens Wharf Rd, Toronto, ON M5V 0J2, Canada",43.6400685,-79.3999604,2800
 1,1,0,"Maud St, Toronto, ON M5V 2M5, Canada",43.6465801,-79.3998612,1199
 1,1,0,"170 Fort York Blvd, Toronto, ON M5V 0E6, Canada",43.6393466,-79.3997415,2150
-1,1,0,", Toronro M4V 1N5 ON, Canada",43.6865112,-79.3995216,150
 1,1,0,"75 Portland St, Toronto, ON M5V 2M9, Canada",43.6439201,-79.3994776,2700
 1,1,1,"70 Queens Wharf Rd, Toronto, ON M5V 0E4, Canada",43.6385213,-79.3994638,2300
 1,1,1,"70 Queens Wharf Rd, Toronto, ON M5V 0E4, Canada",43.6385213,-79.3994638,2300
@@ -609,7 +606,6 @@ Bedroom,Bathroom,Den,Address,Lat,Long,Price
 2,2,0,"Bay St, Toronto, ON, Canada",43.6572984,-79.3843645,1500
 2,2,0,"8 Wellesley St E, Toronto, ON M4Y 3B2, Canada",43.6652335,-79.3842932,3300
 2,2,0,"8 Wellesley St E, Toronto, ON M4Y 3B2, Canada",43.6652335,-79.3842932,3300
-1,1,0,"8 Wellesley St E, Toronto, ON M4Y 3B2, Canada",43.6652335,-79.3842932,99
 1,1,0,"42 Charles St E, Toronto, ON M4Y 1T1, Canada",43.6693009,-79.3841709,2400
 2,2,0,", Yonge and Maitland M4y3b5  ON, Canada",43.6638522,-79.3841153,2600
 1,1,0,"555 Yonge St, Toronto, ON M4Y 3A6, Canada",43.6647233,-79.3840836,2200

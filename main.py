@@ -45,8 +45,6 @@ model.fit(train_X, train_y)
 predictions = model.predict(val_X)
 mae = mean_absolute_error(predictions,val_y)
 
-print(model.predict(pd.DataFrame([[2,2,0,40,-80]])))
-
 #Getting User Input
 user_data = {}
 

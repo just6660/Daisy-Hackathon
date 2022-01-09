@@ -1,9 +1,17 @@
 import streamlit as st
 import pandas as pd
-import numpy as np
-from sklearn import linear_model, preprocessing
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.metrics import mean_absolute_error
+from xgboost import XGBRegressor
 from PIL import Image
-import sklearn
+import pgeocode
+
+nomi = pgeocode.Nominatim("CA")
+postal_code_data = nomi.query_postal_code("M5G")
+print(postal_code_data[["latitude","longitude"]])
+
+
 
 st.set_page_config(layout="wide")
 
@@ -13,39 +21,51 @@ st.write("""
 """)
 
 st.write("""# Introduction
-This webapp was created for the 2022 Daisy Intelligence Hackathon. It is a machine inteligence web application project with a machine learning predictive component. Scroll down to explore further features such as booking a meeting with a Waterloo advisor. 
+This webapp was created for the 2022 Daisy Intelligence Hackathon. It is a machine inteligence web application project with a machine learning predictive component. Scroll down to explore further features such as booking a meeting with a Waterloo advisor.
 """)
 
 Image = Image.open('logo.png')
 st.image(Image, use_column_width= True)
 
-# Getting User Input
-def get_user_input():
+#reading in the data
+appartment_data_path = "Toronto_apartment_rentals_2018.csv"
+appartment_data = pd.read_csv(appartment_data_path)
 
-    latitude = st.number_input('Insert a latitude')
-    longitude = st.number_input('Insert a longitude')
-    bedrooms = st.number_input('Insert number of bedrooms')
-    bathrooms = st.number_input('Insert number of bathrooms')
-    den = st.number_input('Insert number of dens')
+#define X and y variables
+y = appartment_data.Price
 
+'''Removed Address Temporarily'''
+appartment_features = ["Bedroom","Bathroom","Den","Lat","Long"]
+X = appartment_data[appartment_features]
 
+#splitting data into training and validation
+train_X, val_X, train_y, val_y = train_test_split(X,y,train_size = 0.8, test_size = 0.2, random_state = 0)
 
+model = XGBRegressor(n_estimators = 1000,max_depth= 6, colsample_bylevel = 1,colsample_bytree = 1,learning_rate = 0.10,subsample = 1, reg_alpha = 1, reg_lambda=1,gamma =10)
+model.fit(train_X, train_y)
 
-    user_data = {
-        'Lat': latitude,
-        'Long': longitude,
-        'Den': den,
-        'bathroom': bathrooms,
-        'bedroom': bedrooms
-    }
-    return user_data
+predictions = model.predict(val_X)
+mae = mean_absolute_error(predictions,val_y)
 
+print(model.predict(pd.DataFrame([[2,2,0,40,-80]])))
 
+#Getting User Input
+user_data = {}
 
-user_input = get_user_input()
-st.write(user_input.get("Lat"))
+form = st.form(key='my-form')
+user_data["Bedrooms"] = form.number_input('Number of Bedrooms')
+user_data['Bathrooms'] = form.number_input('Number of Bathrooms')
+user_data["Den"] = form.number_input("Number of Dens")
+user_data["Long"] = form.number_input("Longitude")
+user_data["Lat"] = form.number_input("Latitude")
+user_data["postal"] = form.text_input("Postal Code")
+submit = form.form_submit_button('Submit')
 
-
-
+if submit:
+    user_data_list = []
+    for key in user_data:
+        user_data_list.append(user_data[key])
+    predicted_price = (model.predict(pd.DataFrame([[user_data_list]])))
+    st.write(f'The predicted price of the appartment is: ${int(predicted_price[0])}')
 
 

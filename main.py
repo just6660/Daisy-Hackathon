@@ -18,8 +18,8 @@ st.write("""
 # Apartment Price Machine Learning Predictive Model
 """)
 
-st.write("""# Introduction
-This webapp was created for the 2022 Daisy Intelligence Hackathon. It is a machine inteligence web application project with a machine learning predictive component.
+st.write("""# About
+This webapp was created for the 2022 Daisy Intelligence Hackathon. Given several parameters, it predicts appartment rent prices using XGBoost modelling through gradient boosting. The model is trained by first splitting data into training and validation and then the XGBoost parameters are adjusted to minimize the mean absolute error to obtain a model with a higher accuracy. The webapp is created and hosted through streamlit.
 """)
 
 Image = Image.open('logo.png')

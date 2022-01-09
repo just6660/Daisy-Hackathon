@@ -15,7 +15,7 @@ st.set_page_config(layout="wide")
 
 # Create a title and a sub title
 st.write("""
-# Appartment Price Machine Learning Predictive Model
+# Toronto Appartment Price Machine Learning Predictive Model
 """)
 
 st.write("""# About
